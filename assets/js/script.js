@@ -2,7 +2,10 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-  // TODO: Add a listener for click events on the save button. This code should
+  // A listener for click events on the save button.
+  var today = dayjs();
+  $("#currentDay").text(today.format("MMM D, YYYY"));
+
   $(".saveBtn").on("click", function (params) {
     console.log(this);
     var id = $(this).attr("id");
