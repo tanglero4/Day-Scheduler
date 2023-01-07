@@ -6,9 +6,16 @@ $(function () {
   var today = dayjs();
   $("#currentDay").text(today.format("MMM D, YYYY"));
 
-  $(".saveBtn").on("click", function (params) {
+  function compareTime() {
+    var currentTime = dayjs().hour();
+    //console.log(currentTime);
+
+
+
+  }
+
+  $(".saveBtn").on("click", function (event) {
     console.log(this);
-    var id = $(this).attr("id");
 
     //get user input from textarea
     const userValue = document.getElementById("user-input").value;
@@ -21,7 +28,10 @@ $(function () {
     localStorage.setItem("To Do", JSON.stringify(toDo));
   });
 
-  // function? How can DOM traversal be used to get the "hour-x" id of the
+  compareTime();
+
+  // To Do: event delegation to check the hour and put the correct color, make curent time schedule same as current date,
+  // How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
