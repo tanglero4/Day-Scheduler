@@ -10,7 +10,15 @@ $(function () {
     var currentTime = dayjs().hour();
     //console.log(currentTime);
 
+    $(".time-block").each(function (index, timeDiv) {
+      //console.log(index, timeDiv);
+      var id = timeDiv.id;
+      //console.log(id);
 
+      var blockTime = parseInt(id.split("-")[1]);
+      //console.log(blockTime);
+      //== value
+      //=== value, data type
 
   }
 
