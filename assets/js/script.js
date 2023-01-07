@@ -20,6 +20,14 @@ $(function () {
       //== value
       //=== value, data type
 
+      if (currentTime === blockTime) {
+        $(this).addClass("present");
+      } else if (currentTime > blockTime) {
+        $(this).addClass("past");
+      } else {
+        $(this).addClass("future");
+      }
+    });
   }
 
   $(".saveBtn").on("click", function (event) {
