@@ -41,10 +41,20 @@ $(function () {
     var elId = $(this).parent()[0].id;
 
     // get user input and store in the const value
-    const userValue = $(this).prev()[0].value;
+    const userValue = $(this).prev()[0].value.trim();
 
     // store user input to local storage
-    localStorage.setItem(elId, JSON.stringify(userValue));
+    localStorage.setItem(elId, userValue);
   });
 
+  // This function saves user input to time slots even after browser is refreshed
+  $(".description").each(function () {
+    var divEl = $(this).parent()[0].id;
+
+    // gets user input from local storage
+    var valText = localStorage.getItem(divEl);
+
+    // removes quatation mark
+    $(this)[0].value = valText;
+  });
 });
